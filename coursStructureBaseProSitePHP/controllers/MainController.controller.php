@@ -28,7 +28,7 @@ class MainController {
     }
 
     public function page1() {
-        $datas = $this->mainManager->getDataX();
+        $datas = $this->mainManager->getDatas();
 
         $data_page = [
             "page_description" => "Description de la page 1",
