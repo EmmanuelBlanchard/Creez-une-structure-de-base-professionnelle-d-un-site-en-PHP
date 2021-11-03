@@ -1,7 +1,8 @@
 <?php
+require_once("./controllers/MainController.controller.php");
+$mainController = new MainController();
 
 try {
-
     if(empty($_GET['page'])){
         $page = "accueil";
     } else {
@@ -10,32 +11,18 @@ try {
     }
 
     switch($page){
-        case "accueil" : 
-            $page_description = "Description de la page d'accueil";
-            $page_title = "Titre de la page d'accueil";
-            $page_content = "<h1>Accueil</h1>";
+        case "accueil" : $mainController->accueil();
         break;
-        case "page1" : 
-            $page_description = "Description de la page 1";
-            $page_title = "Titre de la page 1";
-            $page_content = "<h1>Page 1</h1>";
+        case "page1" : $mainController->page1();
         break;
-        case "page2" : 
-            $page_description = "Description de la page 2";
-            $page_title = "Titre de la page 2";
-            $page_content = "<h1>Page 2</h1>";
+        case "page2" : $mainController->page2();
         break;
-        case "page3" : 
-            $page_description = "Description de la page 3";
-            $page_title = "Titre de la page 3";
-            $page_content = "<h1>Page 3</h1>";
+        case "page3" : $mainController->page3();
         break;
         default : throw new Exception("La page n'existe pas");
     }
-} catch (Exception $e){
-    $page_description = "Page permettant de gérer les erreurs";
-    $page_title = "Page d'erreur";
-    $page_content = $e->getMessage();
+} catch (Exception $e) {
+    $mainController->pageErreur($e->getMessage());
 }
 
 require_once("views/common/template.php");
