@@ -66,6 +66,7 @@ class MainController {
         $data_page = [
             "page_description" => "Description de la page 3",
             "page_title" => "Titre de la page 3",
+            "page_javascript" => ["page3.js"],
             "view" => "views/page3.view.php",
             "template" => "views/common/template.php"
         ];

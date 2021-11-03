@@ -32,5 +32,10 @@
     <?php require_once("views/common/footer.php"); ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <?php if(!empty($page_javascript)) : ?>
+        <?php foreach($page_javascript as $fichier_javascript) : ?>
+            <script src="<?= URL?>public/JavaScript/<?= $fichier_javascript ?>"></script>
+        <?php endforeach; ?>
+    <?php endif; ?>
 </body>
 </html>
