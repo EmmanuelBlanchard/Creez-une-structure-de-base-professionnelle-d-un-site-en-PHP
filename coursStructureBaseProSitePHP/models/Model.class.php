@@ -5,7 +5,7 @@ abstract class Model {
 
     private static function setBdd() {
         self::$pdo = new PDO("mysql:host=localhost;dbname=coursstructurebaseprositephp;charset=utf8mb4", "root", "");
-        self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+        self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
     protected function getBdd() {

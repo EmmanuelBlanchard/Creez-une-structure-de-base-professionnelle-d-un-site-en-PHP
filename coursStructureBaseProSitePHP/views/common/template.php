@@ -18,13 +18,15 @@
     <?php require_once("views/common/header.php"); ?>
 
     <div class="container">
-        <?php if(!empty($_SESSION['alert'])) : ?>
-            <div class="alert <?= $_SESSION['alert']['type']; ?>" role="alert">
-                <?= $_SESSION['alert']['message']; ?>
-            </div>
         <?php 
-            unset($_SESSION['alert']);
-            endif; 
+            if(!empty($_SESSION['alert'])) {
+                foreach($_SESSION['alert'] as $alert) {
+                    echo "<div class='alert ". $alert['type'] ."' role='alert'>
+                        ".$alert['message']."
+                    </div>";
+                }
+                unset($_SESSION['alert']);
+            }
         ?>
         <?= $page_content; ?>
     </div>

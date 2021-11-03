@@ -18,6 +18,12 @@ try {
     switch($page){
         case "accueil" : $mainController->accueil();
         break;
+        case "compte" : 
+            switch($url[1]){
+                case "profil": $mainController->accueil();
+                break;
+            }
+        break;
         default : throw new Exception("La page n'existe pas");
     }
 } catch (Exception $e) {
