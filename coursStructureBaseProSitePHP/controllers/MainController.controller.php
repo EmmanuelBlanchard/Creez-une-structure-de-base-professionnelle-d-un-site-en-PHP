@@ -21,6 +21,7 @@ class MainController {
         $data_page = [
             "page_description" => "Description de la page d'accueil",
             "page_title" => "Titre de la page d'accueil",
+            "page_css" => ["accueil.css"],
             "view" => "views/accueil.view.php",
             "template" => "views/common/template.php"
         ];
@@ -39,6 +40,7 @@ class MainController {
             "page_description" => "Description de la page 1",
             "page_title" => "Titre de la page 1",
             "datas" => $datas,
+            "page_css" => ["page1.css"],
             "view" => "views/page1.view.php",
             "template" => "views/common/template.php"
         ];
