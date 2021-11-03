@@ -1,6 +1,14 @@
 <?php
 
+require_once("models/MainManager.model.php");
+
 class MainController {
+    private $mainManager;
+
+    public function __construct() {
+        $this->mainManager = new MainManager();
+    }
+
     private function genererPage($data) {
         extract($data);
         ob_start();
@@ -20,9 +28,12 @@ class MainController {
     }
 
     public function page1() {
+        $datas = $this->mainManager->getDataX();
+
         $data_page = [
             "page_description" => "Description de la page 1",
             "page_title" => "Titre de la page 1",
+            "datas" => $datas,
             "view" => "views/page1.view.php",
             "template" => "views/common/template.php"
         ];
