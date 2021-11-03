@@ -18,20 +18,8 @@ try {
     switch($page){
         case "accueil" : $mainController->accueil();
         break;
-        case "page1" : $mainController->page1();
-        break;
-        case "page2" : $mainController->page2();
-        break;
-        case "page3" : $mainController->page3();
-        break;
         default : throw new Exception("La page n'existe pas");
     }
 } catch (Exception $e) {
     $mainController->pageErreur($e->getMessage());
 }
-
-require_once("views/common/template.php");
-
-//index.php?page=accueil
-//index.php?page=page1
-//index.php?page=contact
