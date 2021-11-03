@@ -30,6 +30,11 @@ class MainController {
     public function page1() {
         $datas = $this->mainManager->getDatas();
 
+        $_SESSION['alert'] = [
+            "message" => "Exemple de message d'alerte",
+            "type" => "alert-success"
+        ];
+        
         $data_page = [
             "page_description" => "Description de la page 1",
             "page_title" => "Titre de la page 1",
@@ -41,6 +46,11 @@ class MainController {
     }
 
     public function page2() {
+        $_SESSION['alert'] = [
+            "message" => "Exemple de message d'alerte",
+            "type" => "alert-danger"
+        ];
+
         $data_page = [
             "page_description" => "Description de la page 2",
             "page_title" => "Titre de la page 2",
